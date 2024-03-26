@@ -1,5 +1,6 @@
 import mapboxgl from "mapbox-gl";
 import Styles from "./map.module.css";
+import "mapbox-gl/dist/mapbox-gl.css";
 import { Component } from "react";
 import React from "react";
 
@@ -34,7 +35,7 @@ export default class Map extends Component {
 
     const map = new mapboxgl.Map({
       container: this.mapContainer.current,
-      style: "mapbox://styles/hillodesign/clb95v8zd000v15nudmodao0i",
+      style: "mapbox://styles/mapbox/standard",
       center: [lng, lat],
       zoom: optimalZoom,
     });
@@ -57,7 +58,7 @@ export default class Map extends Component {
                 `);
 
         const marker = new mapboxgl.Marker({
-          color: `black`,
+          color: `red`,
           occludedOpacity: 0.1,
         })
           .setLngLat([long, lat])
@@ -69,7 +70,7 @@ export default class Map extends Component {
       const lat = attractions.lat;
 
       const marker = new mapboxgl.Marker({
-        color: `black`,
+        color: `red`,
         occludedOpacity: 0.1,
       })
         .setLngLat([long, lat])

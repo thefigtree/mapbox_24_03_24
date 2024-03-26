@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import Map from "@/components/map";
+import StoryCard from "@/components/StoryCard";
 import { Component } from "react";
 import { getSortedPostsData } from "@/libs/posts";
 
@@ -82,12 +83,22 @@ export default class Main extends Component {
         <main className={styles.main}>
           <Map
             width="100vw"
-            height="70vh"
+            height="65vh"
             data={this.props.datedSortedPosts}
             zoom="2"
             lng="90.09105767050022"
             lat="12.74421786982952"
           ></Map>
+          <div className={styles.timeline}>
+            {this.props.datedSortedPosts.map((item, index) => (
+              <StoryCard
+                key={index}
+                item={item}
+                flyTo={this.flyTo}
+                zoomOut={this.zoomOut}
+              />
+            ))}
+          </div>
         </main>
       </div>
     );
