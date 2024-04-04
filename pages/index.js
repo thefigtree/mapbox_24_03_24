@@ -82,12 +82,12 @@ export default class Main extends Component {
         </Head>
         <main className={styles.main}>
           <Map
-            width="100vw"
-            height="65vh"
+            width="65vw"
+            height="100vh"
             data={this.props.datedSortedPosts}
             zoom="2"
-            lng="90.09105767050022"
-            lat="12.74421786982952"
+            lng="126.7052"
+            lat="37.4563"
           ></Map>
           <div className={styles.timeline}>
             {this.props.datedSortedPosts.map((item, index) => (
